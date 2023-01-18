@@ -11,4 +11,4 @@ Simply print `CONNECTED` iff there is a path between start_node[i] and end_node[
 * adj list: `example/1/graph.adjlist`
 * start end list: `example/1/start_end_list.csv`
 #### Output
-`WARNING:root:0: 7 -> 4 :: CONNECTED`
+`7 -> 4 :: CONNECTED`
