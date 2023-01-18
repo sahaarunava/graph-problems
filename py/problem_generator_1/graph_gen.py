@@ -2,6 +2,7 @@ import networkx as nx
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
+import logging as log
 
 def select_random_numbers_within_range(start: int,
                                        end:   int,
@@ -21,9 +22,9 @@ def select_random_numbers_within_range(start: int,
         res.append(np.random.randint(start, end))
     return res
 
-d = 5
+d = 3
 num_nodes = 10
-k = 5
+k = 15
 random_graph = nx.random_regular_graph(d=d, n=num_nodes)
 # random_graph = nx.gn_graph(n=num_nodes)
 nx.draw(random_graph)
@@ -37,8 +38,7 @@ dict = {"start": start_points, "end": end_points}
 df = pd.DataFrame(dict)
 df.to_csv("start_end_list.csv", index=False)
 
-print(random_graph)
-print(nx.shortest_path(random_graph, 1, 5))
+log.warning(random_graph)
 
 
 # print(random_graph.nodes)

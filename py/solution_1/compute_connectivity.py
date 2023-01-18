@@ -38,12 +38,13 @@ def find_all_connectivity(graph_file, start_end_file):
         start = start_dict[i]
         end = end_dict[i]
         try:
-            shortest_path_len = nx.shortest_path(graph, start, end)
+            shortest_path_len = len(nx.shortest_path(graph, start, end))
         except Exception as e:
             log.exception(e)
             shortest_path_len = -1
-        log.warning(f"{i}: {start} -> {end} => {shortest_path_len}")
+        status = "CONNECTED" if shortest_path_len > 0 else "DISCONNECTED"
+        log.warning(f"{i}: {start} -> {end} :: {status}")
             
     
-find_all_connectivity(graph_file="graph.adjlist",
-                      start_end_file="start_end_list.csv")
+find_all_connectivity(graph_file="../../example/1/graph.adjlist",
+                      start_end_file="../../example/1/start_end_list.csv")
