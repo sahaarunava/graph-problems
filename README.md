@@ -8,5 +8,7 @@ Given an undireted graph and a list of {start_node, end_node} pairs, print wheth
 Simply print `CONNECTED` iff there is a path between start_node[i] and end_node[i], `DISCONNECTED` otherwise.
 ### Example
 #### Input
-* 
-
+* adj list: `example/1/graph.adjlist`
+* start end list: `example/1/start_end_list.csv`
+#### Output
+`WARNING:root:0: 7 -> 4 :: CONNECTED`
